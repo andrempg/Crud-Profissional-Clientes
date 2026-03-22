@@ -18,9 +18,9 @@ exports.criar = async (dadosUsuario) => {
 // adms com nome de usuario igual e também para possibilitar a checagem dos clientes do adm 
 exports.buscarPorUsuario = async (nomeUsuario) => {
     const query = "SELECT * FROM usuarios WHERE usuario = ? AND ativo = true";
-    const valor = [nomeUsuario];
+    const valores = [nomeUsuario];
 
-    const [resultado] = await db.execute(query, valor);
+    const [resultado] = await db.execute(query, valores);
 
     return resultado[0];
 };
